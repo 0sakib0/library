@@ -11,9 +11,25 @@
         <header>
             <h1 class="title">Library</h1>
         </header>
-        <button class="book-btn"><span class="iconify" data-icon="mdi-plus-circle-outline"></span></button>
+        <button class="book-btn">+ Add Book</button>
+        <div class="form-container">
+            <form id="book-form" style="display: none;">
+                <label for="title">Title</label>
+                <input required="required" type="text" name="title" id="title">
+                <label for="author">Author</label>
+                <input required="required" type="text" name="author" id="author">
+                <label for="pages">Pages</label>
+                <input required="required" type="" name="pages" id="pages">
+                <label for="read">Have you read it?</label>
+                <select name="read" id="read">
+                    <option value="read">Yes</option>
+                    <option value="not-read">No</option>
+                </select>
+                <input type="submit" name="submit" id="submit">
+                <button type="button" class="cancel">Cancel</button>
+            </form>
+        </div>
     </div>
     <script src="script.js"></script>
-    <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </body>
 </html>
