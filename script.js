@@ -29,6 +29,7 @@ addBookButton.addEventListener('click', () => {
     formContainer.style.borderBottom ='2px solid #ccc923'
   } 
   cancelBtn.addEventListener('click', () => {
+   form.reset();
     form.style.display = 'none';
     formContainer.style.backgroundColor = '';
     formContainer.style.border = 'none';
