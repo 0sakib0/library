@@ -3,26 +3,32 @@ const cancelBtn = document.querySelector('.cancel');
 const formContainer = document.querySelector('.form-container');
 const form = document.getElementById('book-form');
 
-let myLibrary = [{
-    title: 'The hobbit',
-    author: 'J.R.R. Tolkien',
-    pages: '295',
-    status: 'Not read'
-}];
+let myLibrary = [];
 
-console.log(myLibrary
-  );
+
 
 function Book(title, author, pages, status) {
- this.title = title;
- this.author = author;
- this.pages = pages;
- this.status = status;
+
+   this.title = title;
+   this.author = author; 
+   this.pages = pages;
+   this.status = status;
 }
 
 
+
+
 function addBookLibrary() {
- 
+
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const pages = document.getElementById('pages').value;
+  const status = document.getElementById('status').value;
+   
+  let newBook = new Book(title, author, pages, status);
+  myLibrary.push(newBook);
+  console.log(myLibrary);
+
 }
 
 
@@ -52,13 +58,7 @@ document.getElementById('submit').addEventListener('click', function() {
     formContainer.style.backgroundColor = '';
     formContainer.style.border = 'none';
   event.preventDefault();
-  
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
-  const pages = document.getElementById('pages').value;
-  const status = document.getElementById('status').value;
-
-  console.log({title, author, pages, status});
+  addBookLibrary()
   form.reset();
 });
 
